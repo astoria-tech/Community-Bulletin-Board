@@ -7,20 +7,12 @@ const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
 );
 
 const getOpenRoles = () =>
-  new Promise((resolve, reject) => {
-    base
-      .table(process.env.AIRTABLE_TABLE_NAME)
-      .select({
-        view: 'Grid view',
-        filterByFormula: "AND({Status} = 'open',{Is it approved?} = '1')",
-      })
-      .eachPage(
-        (records, fetchNextPage) =>
-          resolve(records.map(record => record.fields)),
-        err => {
-          if (err) reject(err);
-        }
-      );
-  });
+  base
+    .table(process.env.AIRTABLE_TABLE_NAME)
+    .select({
+      view: 'Grid view',
+      filterByFormula: "AND({Status} = 'open',{Is it approved?} = '1')",
+    })
+    .all();
 
 module.exports = { getOpenRoles };
