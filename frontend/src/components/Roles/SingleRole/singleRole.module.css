@@ -1,0 +1,42 @@
+.SingleRoleContainer {
+  width: 57%;
+  border: 3px solid var(--main-black);
+  margin: 1rem auto;
+  transition: all .4 ease-in;
+}
+
+.HeaderContainer {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 3px solid var(--main-black);
+}
+.Role {
+  text-transform: uppercase;
+  border-right: 3px solid var(--main-black);
+  text-align: center;
+}
+
+.NotShow{
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.Remote {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.visuallyHidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+

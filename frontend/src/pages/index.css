@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+
+:root {
+  --main-green-color: #49b775;
+  --main-black: #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
