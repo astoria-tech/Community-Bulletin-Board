@@ -1,8 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap');
 
 :root {
   --main-green-color: #49b775;
   --main-black: #000000;
+}
+
+/* sets 1rem to 10px with standard 16px font size */
+html{
+  font-size: 62.5%;
 }
 
 * {

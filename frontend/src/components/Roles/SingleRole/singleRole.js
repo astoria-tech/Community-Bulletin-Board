@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import classes from "./singleRole.module.css"
+import normalizeUrl from 'normalize-url';
 
 const SingleRole = ({
   role,
@@ -9,25 +10,28 @@ const SingleRole = ({
   timeCommitment,
   howToGetStarted,
   howToGetStartedLink,
-  contactForMore,
   communityGroup,
-  isInAstoria,
+  moreInformation,
   groupDescription,
-  status,
   website,
 }) => {
   const [show, setShow] = useState(false)
   const readMore = show ? classes.Show : classes.NotShow
+
+  //gatsby has known problem of appending the external link to current address if the link doesn't start with https
+
   return (
     <dl className={classes.SingleRoleContainer}>
       <div className={classes.HeaderContainer}>
         <div className={classes.Role}>
           <dt className={classes.visuallyHidden}>Role</dt>
-          <dd>{role}</dd>
+          <dd>
+            <h2>{role}</h2>
+          </dd>
         </div>
         <div className={classes.Remote}>
           <dt className={classes.visuallyHidden}>Is it remote</dt>
-          <dd>{isRemote ? "remote" : "on-site"}</dd>
+          <dd>{isRemote ? "Remote" : "On-site"}</dd>
         </div>
       </div>
       <dt className={classes.visuallyHidden}>Role description</dt>
@@ -37,16 +41,37 @@ const SingleRole = ({
         <dd>{techNeeds}</dd>
         <dt>Time Commitment</dt>
         <dd>{timeCommitment}</dd>
+        <dt>How To Get Started</dt>
+        <dd>
+          {howToGetStarted}
+          <br />
+          <a href={howToGetStarted}>{howToGetStartedLink}</a>
+        </dd>
         <dt>Contact us for more information</dt>
-        <dd>{contactForMore}</dd>
+        <dd>
+          <a href={`mailto:${moreInformation}`}>
+            {moreInformation.toLowerCase()}
+          </a>
+        </dd>
+        <dt>{communityGroup}</dt>
+        <dd>{groupDescription}</dd>
+        <dt className={classes.visuallyHidden}>Group website</dt>
+        <dd>
+          <a href={normalizeUrl(website)} target="_blank" rel="noopener noreferrer">
+            {website}
+          </a>
+        </dd>
       </div>
-      <button
-        onClick={() => {
-          setShow(prev => !prev)
-        }}
-      >
-        {show ? "less" : "more"}
-      </button>
+      <div className={classes.ButtonContainer}>
+        <button
+          className={classes.Button}
+          onClick={() => {
+            setShow(prev => !prev)
+          }}
+        >
+          {show ? "Less -" : "More +"}
+        </button>
+      </div>
     </dl>
   )
 }

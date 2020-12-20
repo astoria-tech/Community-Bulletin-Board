@@ -7,7 +7,7 @@ import './index.css';
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-<Roles />
+    <Roles />
   </Layout>
 )
 

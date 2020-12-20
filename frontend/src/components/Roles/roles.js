@@ -62,6 +62,7 @@ const Roles = () => {
               }
               timeCommitment={role.node.description.Time_Commitment}
               moreInformation={role.node.description.More_Information}
+
             />
           )
         } else return null
