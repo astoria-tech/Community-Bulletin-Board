@@ -1,27 +1,24 @@
 .Header {
   background: var(--main-green-color);
-  margin-bottom: 1.45rem;
   width: 100vw;
-}
-
-.HeaderContainer {
+  text-transform: uppercase;
+  margin-bottom: 1.45rem;
+  min-height: 28rem;
   display: flex;
+  align-items: center;
   justify-content: start;
-  padding: 1.45rem 1rem;
+  padding: 1rem;
 }
 
 .HeaderContainer h1 {
-  margin: 6.2vw 0 6vw 7.4vw;
-  font-family: "Fjalla One", sans-serif;
-  font-style: normal;
-  font-size: 12vw;
-  line-height: 12vw;
-  font-weight: 400;
+  font-size: 7rem;
+  line-height: 7rem;
 }
 
 @media (min-width: 768px) {
   .HeaderContainer h1 {
-    font-size: 8vw;
-    line-height: 8vw;
+    margin-left: 7.4rem;
+    font-size: 8rem;
+    line-height: 8rem;
   }
 }

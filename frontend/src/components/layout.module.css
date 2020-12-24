@@ -553,28 +553,14 @@ pre tt:after {
   content: "";
 }
 
-.Footer {
-  background-color: var(--main-green-color);
-  height: 27vh;
-  width: 100vw;
-  max-width: 100vw;
+div.MainContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-self: flex-end;
-  margin: 0;
-  flex: 1;
-}
-
-.MainContainer {
   min-height: 100vh;
-  display: flex;
   flex-direction: column;
 }
 
-.Content {
-  flex-grow: 1;
+main.Content {
+  flex: 1 0 auto;
 }
 /* @media only screen and (max-width: 480px) {
   html {

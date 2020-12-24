@@ -1,13 +1,15 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Roles from '../components/Roles/roles'
-import './index.css';
+import Roles from "../components/Roles/roles"
+import SubmitRole from "../components/SubmitRole/submitRole"
+import About from "../components/About/about"
+import "./index.css"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
     <Roles />
+    <SubmitRole />
+    <About />
   </Layout>
 )
 

@@ -34,7 +34,15 @@ const Roles = () => {
   `)
 
   return (
-    <section>
+    <section className={classes.RolesContainer}>
+      <header className={classes.RolesHeader}>
+        <h2>Volunteer Roles Needed</h2>
+      </header>
+      <div className={classes.Description}>
+        Roles are positions in a volunteer group that require a commitment over
+        a period of weeks or months and may require a specific skill set.
+      </div>
+
       {data.allRole.edges.map(role => {
         if (role.node.description.Is_it_approved_) {
           return (
@@ -62,7 +70,6 @@ const Roles = () => {
               }
               timeCommitment={role.node.description.Time_Commitment}
               moreInformation={role.node.description.More_Information}
-
             />
           )
         } else return null

@@ -18,8 +18,6 @@ const SingleRole = ({
   const [show, setShow] = useState(false)
   const readMore = show ? classes.Show : classes.NotShow
 
-  //gatsby has known problem of appending the external link to current address if the link doesn't start with https
-
   return (
     <dl className={classes.SingleRoleContainer}>
       <div className={classes.HeaderContainer}>
@@ -35,7 +33,7 @@ const SingleRole = ({
         </div>
       </div>
       <dt className={classes.visuallyHidden}>Role description</dt>
-      <dd>{roleDescription}</dd>
+      <dd className={classes.Description}>{roleDescription}</dd>
       <div className={readMore}>
         <dt>Tech Needs</dt>
         <dd>{techNeeds}</dd>
@@ -57,7 +55,7 @@ const SingleRole = ({
         <dd>{groupDescription}</dd>
         <dt className={classes.visuallyHidden}>Group website</dt>
         <dd>
-          <a href={normalizeUrl(website)} target="_blank" rel="noopener noreferrer">
+          <a href={normalizeUrl(website)}>
             {website}
           </a>
         </dd>

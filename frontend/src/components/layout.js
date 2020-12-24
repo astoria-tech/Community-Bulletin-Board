@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Header from "./Header/header"
+import Footer from "./Footer/footer"
 import classes from "./layout.module.css"
 
 const Layout = ({ children }) => {
@@ -15,7 +16,7 @@ const Layout = ({ children }) => {
     <div className={classes.MainContainer}>
       <Header />
       <main className={classes.Content}>{children}</main>
-      <footer>Astoria Digital 2020</footer>
+      <Footer>Astoria Digital 2020</Footer>
     </div>
   )
 }
