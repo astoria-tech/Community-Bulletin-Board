@@ -1,0 +1,11 @@
+.Footer {
+  background-color: var(--main-green-color);
+  width: 100%;
+  min-height: 16rem;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
