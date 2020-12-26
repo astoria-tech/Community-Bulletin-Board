@@ -1,40 +1,48 @@
-import React from "react"
+import React,{useState,useEffect} from "react"
+import axios from 'axios'
 import { useStaticQuery, graphql } from "gatsby"
 import SingleRole from "./SingleRole/singleRole"
 import classes from "./roles.module.css"
 
 const Roles = () => {
-  const data = useStaticQuery(graphql`
-    query GetRolesQuery {
-      allRole {
-        totalCount
-        edges {
-          node {
-            description {
-              Community_Group
-              Group_Description
-              How_To_Get_Started
-              Is_it_approved_
-              Is_this_group_based_in_Astoria__Queens_
-              Is_this_role_remote_or_in_person_
-              More_Information
-              Role
-              Role_Description
-              Status
-              Tech_Needs
-              Time_Commitment
-              Website
-              How_to_get_started_link
-            }
-            id
-          }
-        }
-      }
-    }
-  `)
+  const [roles,setRoles] = useState();
+  // const data = useStaticQuery(graphql`
+  //   query GetRolesQuery {
+  //     allRole {
+  //       totalCount
+  //       edges {
+  //         node {
+  //           description {
+  //             Community_Group
+  //             Group_Description
+  //             How_To_Get_Started
+  //             Is_it_approved_
+  //             Is_this_group_based_in_Astoria__Queens_
+  //             Is_this_role_remote_or_in_person_
+  //             More_Information
+  //             Role
+  //             Role_Description
+  //             Status
+  //             Tech_Needs
+  //             Time_Commitment
+  //             Website
+  //             How_to_get_started_link
+  //           }
+  //           id
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
+  useEffect(()=>{
+    console.log('hello test')
+    axios.get('http://localhost:3000/api/getOpen')
+    .then(res=>setRoles(res.data))
+  },[])
   return (
     <section className={classes.RolesContainer}>
+      {/* {console.log(roles)} */}
       <header className={classes.RolesHeader}>
         <h2>Volunteer Roles Needed</h2>
       </header>
@@ -42,37 +50,35 @@ const Roles = () => {
         Roles are positions in a volunteer group that require a commitment over
         a period of weeks or months and may require a specific skill set.
       </div>
-
-      {data.allRole.edges.map(role => {
-        if (role.node.description.Is_it_approved_) {
+      {roles&&console.log(roles)}
+      {roles&&roles.map(role => {
           return (
             <SingleRole
-              key={role.node.id}
-              role={role.node.description.Role}
-              roleDescription={role.node.description.Role_Description}
-              communityGroup={role.node.description.Community_Group}
+              key={role.fields.id}
+              role={role.fields.Role}
+              roleDescription={role.fields["Role Description"]}
+              communityGroup={role.fields["Community Group"]}
               isRemote={
-                role.node.description.Is_this_role_remote_or_in_person_[0] ===
+                role.fields["Is this role remote or in person?"] ===
                 "remote"
                   ? true
                   : false
               }
-              status={role.node.description.Status}
-              techNeeds={role.node.description.Tech_Needs}
+              status={role.fields.Status}
+              techNeeds={role.fields["Tech Needs"]}
               isInAstoria={
-                role.node.description.s_this_group_based_in_Astoria__Queens_
+                role.fields["is this group based in Astoria Queens?"] 
               }
-              website={role.node.description.Website}
-              groupDescription={role.node.description.Group_Description}
-              howToGetStarted={role.node.description.How_To_Get_Started}
+              website={role.fields.Website}
+              groupDescription={role.fields["Group Description"]}
+              howToGetStarted={role.fields["How To Get Started"]}
               howToGetStartedLink={
-                role.node.description.How_to_get_started_link
+                role.fields["How to get started link"]
               }
-              timeCommitment={role.node.description.Time_Commitment}
-              moreInformation={role.node.description.More_Information}
+              timeCommitment={role.fields["Time Commitment"]}
+              moreInformation={role.fields["More Information"]}
             />
           )
-        } else return null
       })}
     </section>
   )
