@@ -2,12 +2,13 @@ FROM node:10.15
 
 WORKDIR /srv
 
-#install reqs
+# Install requirements
 ADD package.json package-lock.json ./
 RUN npm install
 
-#add source
-ADD *.js *.json *.md ./
+# Add the source
+ADD *js *json *md ./
 ADD src src
+RUN npm run build
 
-CMD ["npm","start"]
+CMD ["npm", "run", "serve"]

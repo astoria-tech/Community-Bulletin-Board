@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react"
 import axios from 'axios'
-import { useStaticQuery, graphql } from "gatsby"
+// import { useStaticQuery, graphql } from "gatsby"
 import SingleRole from "./SingleRole/singleRole"
 import classes from "./roles.module.css"
 
