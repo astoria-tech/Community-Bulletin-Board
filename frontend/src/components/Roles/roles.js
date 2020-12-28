@@ -37,7 +37,7 @@ const Roles = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/getOpen")
+      .get("/api/getOpen")
       .then(res => setRoles(res.data))
   }, [])
   return (
