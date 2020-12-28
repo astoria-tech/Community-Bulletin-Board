@@ -50,7 +50,6 @@ const Roles = () => {
         Roles are positions in a volunteer group that require a commitment over
         a period of weeks or months and may require a specific skill set.
       </div>
-      {roles && console.log(roles)}
       {roles &&
         roles.map(role => {
           return (
