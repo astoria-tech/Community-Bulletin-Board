@@ -60,7 +60,7 @@ const Roles = () => {
               roleDescription={role.fields["Role Description"]}
               communityGroup={role.fields["Community Group"]}
               isRemote={
-                role.fields["Is this role remote or in person?"] === "remote"
+                role.fields["Is this role remote or in person?"][0] === "remote"
                   ? true
                   : false
               }
