@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import classes from "./singleRole.module.css"
-import normalizeUrl from 'normalize-url';
+import normalizeUrl from "normalize-url"
 
 const SingleRole = ({
   role,
@@ -55,9 +55,7 @@ const SingleRole = ({
         <dd>{groupDescription}</dd>
         <dt className={classes.visuallyHidden}>Group website</dt>
         <dd>
-          <a href={normalizeUrl(website)}>
-            {website}
-          </a>
+          <a href={normalizeUrl(website)}>{website}</a>
         </dd>
       </div>
       <div className={classes.ButtonContainer}>

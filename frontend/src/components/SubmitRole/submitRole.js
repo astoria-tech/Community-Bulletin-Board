@@ -12,7 +12,9 @@ const SubmitRole = () => {
         volunteer position to this site!
       </p>
 
-      <a href="mailto:team@astoria.digital"><button className={classes.Button}>Contact Us</button></a>
+      <a href="mailto:team@astoria.digital">
+        <button className={classes.Button}>Contact Us</button>
+      </a>
     </section>
   )
 }
