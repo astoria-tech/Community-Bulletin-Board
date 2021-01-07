@@ -43,7 +43,7 @@ const SingleRole = ({
         <dd>
           {howToGetStarted}
           <br />
-          <a href={howToGetStartedLink}>{howToGetStarted}</a>
+          <a href={howToGetStartedLink}>{howToGetStartedLink}</a>
         </dd>
         <dt>Contact us for more information</dt>
         <dd>
