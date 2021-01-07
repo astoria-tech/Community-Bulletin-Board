@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/http.js",
   "scripts": {
-    "start": "nodemon src/http.js",
+    "start": "node src/http.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
