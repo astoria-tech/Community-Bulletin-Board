@@ -29,7 +29,7 @@ const SingleRole = ({
         </div>
         <div className={classes.Remote}>
           <dt className={classes.visuallyHidden}>Is it remote</dt>
-          <dd>{isRemote ? "Remote" : "On-site"}</dd>
+          <dd className={classes.Remote_dd}>{isRemote ? "Remote" : "On-site"}</dd>
         </div>
       </div>
       <dt className={classes.visuallyHidden}>Role description</dt>

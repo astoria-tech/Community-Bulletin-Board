@@ -29,9 +29,14 @@
   flex: 2;
 }
 
+.Remote_dd {
+  margin: 0;
+}
+
 .Role h2 {
   font-size: 3rem;
   line-height: 4.5rem;
+  margin-top: 0.45em;
 }
 
 .Description {
