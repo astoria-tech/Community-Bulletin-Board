@@ -4,4 +4,15 @@
  * See: https://www.gatsbyjs.com/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+const addScript = url =>{
+    const script = document.createElement('script')
+    script.src=url
+    script.async = true
+    document.body.appendChild(script)
+}
+
+export const onClientEntry=()=>{
+    window.onload=()=>{
+        addScript('https://static.airtable.com/js/embed/embed_snippet_v1.js')
+    }
+}

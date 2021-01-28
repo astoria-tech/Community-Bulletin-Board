@@ -13,14 +13,14 @@ const SubmitRole = () => {
       </p>
 
       <iframe 
-        class="airtable-embed" 
+        className="airtable-embed airtable-dynamic-height" 
         src="https://airtable.com/embed/shruLzApF5HT3A6rZ?backgroundColor=yellow" 
         frameborder="0" 
         onmousewheel="" 
         width="100%" 
-        height="533" 
-        style={{background: "transparent", border: "1px solid #ccc"}}>
-      </iframe>
+        height="3134" 
+        style={{background: 'transparent', border: '1px solid #ccc'}}>
+        </iframe>
 
       <a href="mailto:team@astoria.digital">
         <button className={classes.Button}>Contact Us</button>
