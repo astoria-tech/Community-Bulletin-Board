@@ -1,0 +1,45 @@
+.SubmitOrganizationContainer {
+  width: 90%;
+  box-sizing: border-box;
+  border-top: 3px solid var(--main-black);
+  border-bottom: 3px solid var(--main-black);
+  margin: 3rem auto;
+  padding: 3rem 2rem 3rem 2rem;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 125%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Button {
+  border: 3px solid var(--main-black);
+  background-color: transparent;
+  font-size: 2.5rem;
+  height: 8rem;
+  width: 26rem;
+  margin-top: 2rem;
+}
+
+.Button:hover {
+  cursor: pointer;
+}
+
+.Button:active {
+  -webkit-box-shadow: inset -2px -2px 3px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset -2px -2px 3px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: inset -2px -2px 3px 0px rgba(0, 0, 0, 0.75);
+}
+
+.Button:focus {
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .SubmitOrganizationContainer {
+    width: 57%;
+    padding: 3rem 4.5rem 3rem 4.5rem;
+  }
+}
