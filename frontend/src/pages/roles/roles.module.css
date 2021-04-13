@@ -33,7 +33,7 @@
 
 @media (min-width: 768px) {
   .RolesContainer {
-    margin-bottom: 20rem;
+    /* margin-bottom: 20rem; */
   }
   .RolesHeader {
     width: 57%;
@@ -47,6 +47,7 @@
   .Description {
     width: 100%;
     border-top: 3px solid black;
+    padding: 5rem 0;
   }
 
   .RolesHeader h2{
