@@ -32,13 +32,21 @@
 }
 
 @media (min-width: 768px) {
+  .RolesContainer {
+    margin-bottom: 20rem;
+  }
   .RolesHeader {
     width: 57%;
     font-size: 1.8vw;
   }
 
-  .Description {
+  .Description > p, h2{
     width: 57%;
+    margin: 0 auto;
+  }
+  .Description {
+    width: 100%;
+    border-top: 3px solid black;
   }
 
   .RolesHeader h2{

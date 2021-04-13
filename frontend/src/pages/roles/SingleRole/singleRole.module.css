@@ -24,12 +24,13 @@
 .Role {
   text-transform: uppercase;
   border-right: 3px solid var(--main-black);
+  background-color: var(--main-light-green);
   text-align: center;
   padding: 0 3rem;
   flex: 2;
 }
 
-.Remote_dd {
+.IsRemote {
   margin: 0;
 }
 
@@ -111,6 +112,20 @@
 
   .Remote {
     font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .IsRemote {
+    border-bottom: 3px solid black;
+    padding-top: 1.5rem;
+    flex: 1;
+  }
+
+  dd.TimeCommitment{
+    text-align: center;
+    padding-top: 1.5rem;
+    flex: 1;
   }
 
   .Role h2 {
@@ -125,4 +140,6 @@
   .Show {
     padding: 0 3rem 0 3rem;
   }
+
+
 }

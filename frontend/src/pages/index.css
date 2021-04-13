@@ -3,34 +3,20 @@
 
 :root {
   --main-green-color: #49b775;
+  --main-light-green: rgba(73, 183, 117, 0.25);
   --main-black: #000000;
 }
 
 /* sets 1rem to 10px with standard 16px font size */
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 
 * {
   font-size: 1.8rem;
-  line-height: 2.25rem;
+  line-height: 2.7rem;
   font-family: "DM Mono", Courier, monospace;
-}
-
-h1 {
-  font-weight: 400;
-  font-family: "Fjalla One", Helvetica, sans-serif;
-}
-
-h2 {
-  font-family: "Fjalla One", Helvetica, sans-serif;
-  font-weight: 400;
-}
-
-h5 {
-  font-size: 3rem;
-  line-height: 3rem;
-  font-weight: 400;
 }
 
 a,
@@ -44,4 +30,35 @@ dt,
 dt {
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-weight: 400;
+  font-family: "Fjalla One", Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: "Fjalla One", Helvetica, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 5rem;
+    line-height: 6.5rem;
+  }
+
+  h5 {
+    font-size: 3rem;
+    line-height: 3rem;
+    font-weight: 400;
+  }
+
+  h6 {
+    font-size: 1.8rem;
+    line-height: 2.25rem;
+    font-weight: 500;
+  }
 }
