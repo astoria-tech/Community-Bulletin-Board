@@ -42,7 +42,7 @@ const SingleRole = ({
         <dd>{timeCommitment}</dd>
         <dt>How To Get Started</dt>
         <dd>
-          {howToGetStarted}
+         {howToGetStarted}
           <br />
           <a href={howToGetStartedLink}>{howToGetStartedLink}</a>
         </dd>
@@ -66,7 +66,7 @@ const SingleRole = ({
             setShow(prev => !prev)
           }}
         >
-          {show ? "Less -" : "More +"}
+         <p>{show ? "Less -" : "More +"}</p>
         </button>
       </div>
     </dl>

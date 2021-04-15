@@ -3,6 +3,8 @@ import axios from "axios"
 import SingleRole from "./SingleRole/singleRole"
 import classes from "./roles.module.css"
 import ErrorMessage from "../../components/ErrorMessage/errorMessage"
+import Button from "../../components/Button/button"
+import { Link } from "gatsby"
 
 const Roles = () => {
   const [roles, setRoles] = useState()
@@ -22,18 +24,16 @@ const Roles = () => {
         setError(err)
       })
   }, [])
-
-  if (loading) return <p style={{ textAlign: "center" }}>Loading roles...</p>
+  let showRoles = null
+  if (loading)
+    showRoles = <p style={{ textAlign: "center" }}>Loading roles...</p>
   else if (error) {
-    return <ErrorMessage />
-  }
-
-  return (
-    <section className={classes.RolesContainer}>
-      <div>
+    showRoles = <ErrorMessage />
+  } else {
+    showRoles = (
+      <>
         {roles &&
           roles.map(role => {
-            console.log("role:", role)
             return (
               <SingleRole
                 key={role.id}
@@ -60,7 +60,31 @@ const Roles = () => {
               />
             )
           })}
+      </>
+    )
+  }
+
+  return (
+    <section className={classes.RolesContainer}>
+      <div className={classes.RolesHeader}>
+        <div>
+          <h2>OPEN VOLUNTEER ROLES</h2>
+          <div className={classes.MobileOnly}>
+            {" "}
+            <span className={[`${classes.SubmitRole}`]}>
+              <p>
+                Review roles posted below and reach out to the groups that you
+                are interested in volunteering with. If you are a volunteer
+                group, <Link to="/submitRole">Submit a Role!</Link>{" "}
+              </p>
+            </span>
+          </div>
+          <span className={classes.DesktopOnly}>
+            <Button link="/submitRole">Submit A Role</Button>
+          </span>
+        </div>
       </div>
+      {showRoles}
       <div className={classes.Description}>
         <h2>HAVE A ROLE THAT NEEDS FILLED?</h2>
         <p>
@@ -68,6 +92,9 @@ const Roles = () => {
           in your organization that require a commitment over a period of weeks
           or months and may require a specific skill set. Fill out the form and
           we will add your open role to the site upon approval!
+          <br />
+          <br/>
+          <Button link="/submitRole">Submit A Role</Button>
         </p>
       </div>
       <div className={classes.Description}>

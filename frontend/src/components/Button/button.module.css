@@ -1,0 +1,29 @@
+.Button {
+  border: 3px solid var(--main-black);
+  background-color: transparent;
+  font-size: 1.4rem;
+  height: 6rem;
+  width: 15rem;
+}
+
+.Button:hover {
+  cursor: pointer;
+}
+
+.Button:active {
+  -webkit-box-shadow: inset -2px -2px 3px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset -2px -2px 3px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: inset -2px -2px 3px 0px rgba(0, 0, 0, 0.75);
+}
+
+.Button:focus {
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .Button {
+    font-size: 2.5rem;
+    height: 9rem;
+    width: 25rem;
+  }
+}

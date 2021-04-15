@@ -8,17 +8,16 @@ const SubmitRole = () => {
       <p>
         Are you a group in Astoria looking for volunteers? Roles are positions
         in your organization that require a commitment over a period of weeks or
-        months and may require a specific skill set. Fill out the form below and 
+        months and may require a specific skill set. Fill out the form below and
         we will add your open role to the site upon approval!
       </p>
 
-      <iframe 
-        className="airtable-embed airtable-dynamic-height" 
-        src="https://airtable.com/embed/shruLzApF5HT3A6rZ?backgroundColor=yellow" 
-        frameborder="0" 
-        onmousewheel="" 
-        width="100%" 
-        height="3134" 
+      <iframe
+        className="airtable-embed airtable-dynamic-height"
+        src="https://airtable.com/embed/shruLzApF5HT3A6rZ?backgroundColor=yellow"
+        frameBorder="0"
+        width="100%"
+        height="3134"
         style={{background: 'transparent', border: '1px solid #ccc'}}>
         </iframe>
 
