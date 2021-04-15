@@ -39,6 +39,6 @@ module.exports = {
   ],
   proxy: {
     prefix: "/api",
-    url: "http://backend:3000",
+    url: "http://localhost:3000",
   },
 }

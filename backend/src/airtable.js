@@ -19,4 +19,17 @@ const getOpenRoles = async () => {
 	}
 };
 
-module.exports = { getOpenRoles };
+const getEvents = async () => {
+	try {
+		return base ('Calendar')
+		.select({
+			view: 'Grid view'
+		})
+		.all();
+	}catch (error) {
+		console.log(error);
+	}
+}
+
+
+module.exports = { getOpenRoles, getEvents };
