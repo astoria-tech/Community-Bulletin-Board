@@ -1,0 +1,43 @@
+.Button {
+  border: none;
+  background-color: transparent;
+  margin: 0 auto;
+  display: block;
+  padding-top: 1rem;
+  margin-right: 2rem;
+  font-size: 3rem;
+}
+.NotShow {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.Show {
+  padding: 0 2rem 0 2rem;
+}
+
+.Button:hover {
+  cursor: pointer;
+}
+
+.Button:focus {
+  outline: none;
+}
+
+.EventContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.Event {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+}
