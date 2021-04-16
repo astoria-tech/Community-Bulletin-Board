@@ -5,6 +5,13 @@
   --main-green-color: #49b775;
   --main-light-green: rgba(73, 183, 117, 0.25);
   --main-black: #000000;
+  --main-grey: rgba(0, 0, 0, 0.5);
+  --large-gutter-desktop: 15rem;
+  --medium-gutter-desktop: 8rem;
+  --small-gutter-desktop: 3rem;
+  --large-gutter-mobile: 5rem;
+  --medium-gutter-mobile: 3rem;
+  --small-gutter-mobile: 1rem;
 }
 
 /* sets 1rem to 10px with standard 16px font size */
@@ -15,6 +22,7 @@ html {
 
 * {
   font-family: "DM Mono", Courier, monospace;
+  font-size: 1.4rem;
 }
 
 a,
@@ -52,6 +60,14 @@ p {
   font-size: 1.8rem;
   line-height: 2.7rem;
   font-weight: 400;
+  margin-bottom: 1.45rem;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
 }
 
 h2 {
@@ -62,22 +78,25 @@ h2 {
   line-height: 3rem;
 }
 
-dd{
+dd {
   font-size: 1.8rem;
   line-height: 2.7rem;
   font-weight: 400;
-  margin-bottom: .7rem;
+  margin-bottom: 0.7rem;
 }
 
-dt{
+dt {
   font-size: 1.8rem;
   line-height: 2.25rem;
   font-weight: 600;
-  margin-bottom: .7rem;
+  margin-bottom: 0.7rem;
 }
 
-
 @media (min-width: 768px) {
+  * {
+    font-size: 1.8rem;
+  }
+
   p {
     font-size: 1.8rem;
     line-height: 2.7rem;

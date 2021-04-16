@@ -3,7 +3,7 @@ import axios from "axios"
 import SingleRole from "./SingleRole/singleRole"
 import classes from "./roles.module.css"
 import ErrorMessage from "../../components/ErrorMessage/errorMessage"
-import Button from "../../components/Button/button"
+import Button from "../../components/UI/Button/button"
 import { Link } from "gatsby"
 
 const Roles = () => {

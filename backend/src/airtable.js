@@ -23,8 +23,7 @@ const getEvents = async () => {
 	try {
 		return base ('Calendar')
 		.select({
-			view: 'Grid view',
-			filterByFormula: "AND({Status} = 'open',{Is it approved?} = '1')",
+			view: 'Grid view'
 		})
 		.all();
 	}catch (error) {

@@ -13,10 +13,6 @@
   visibility: hidden;
 }
 
-.Show {
-  padding: 0 2rem 0 2rem;
-}
-
 .Button:hover {
   cursor: pointer;
 }
@@ -25,19 +21,46 @@
   outline: none;
 }
 
-.EventContainer {
-  width: 100%;
+.EventTitleContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-content: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 8rem;
 }
 
-.Event {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.EventTitle {
+  margin: 0 2rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+.DateLocation {
+  color: var(--main-grey);
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+.EventDescription {
+  border-top: 3px solid var(--main-grey);
+  padding: 2rem;
 }
 
 @media (min-width: 768px) {
+  .EventDescription {
+    padding: 3rem 15rem;
+  }
+
+  .EventTitle {
+    margin: 0 15rem;
+    font-size: 1.4rem;
+    line-height: 3rem;
+  }
+
+  .Button {
+    margin-right: 15rem;
+  }
 }

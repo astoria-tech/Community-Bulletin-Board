@@ -20,9 +20,15 @@ app.get(
 	'/api/getEvents',
 	cors({ origin: 'http://localhost:8000' }),
 	async (req, res) => {
-		const data = await getEvents();
+		try{
+			const data = await getEvents();
 		const rawJson = data.map((item) => item._rawJson);
 		res.json(rawJson);
+		}
+		catch(err){
+			console.log(console.error(err))
+			res.send(err)
+		}
 	}
 );
 
