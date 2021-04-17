@@ -17,12 +17,13 @@
 }
 
 .EventContainer {
-  border-top: 3px solid var(--main-grey);
+  border-bottom: 3px solid var(--main-grey);
 }
 
-.EventContainer:first-of-type {
-  border-top: none;
+div.EventContainer:last-child {
+  border: none;
 }
+
 .DesktopOnly {
   display: none;
 }
@@ -44,6 +45,7 @@
     display: flex;
     align-items: center;
   }
+
 
   .SubmitEvent {
     padding: 3rem 15rem;

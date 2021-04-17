@@ -3,7 +3,7 @@ import classes from "./about.module.css"
 
 export const about = () => (
   <section className={classes.AboutContainer}>
-    <h5>About This Project</h5>
+    <h5>ABOUT THE BULLETIN BOARD</h5>
     <p>
       This was created by a group of volunteers from{" "}
       <a href="https://astoria.digital/">Astoria Digital</a>, collaborating with

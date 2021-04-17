@@ -1,0 +1,53 @@
+.NotShow {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.Content {
+  margin: var(--small-gutter-mobile) 2rem;
+}
+
+.Header {
+  padding-left: 2rem;
+  border-top: 3px solid var(--main-black);
+  border-bottom: 3px solid var(--main-black);
+  background-color: var(--main-light-green);
+  display: flex;
+}
+
+.Header > h5 {
+  margin-left: 0;
+
+}
+
+.Button {
+  border: none;
+  background-color: transparent;
+  margin: 0 auto;
+  display: block;
+  padding-top: 1rem;
+  margin-right: 2rem;
+  font-size: 3rem;
+}
+.Button:hover {
+  cursor: pointer;
+}
+
+.Button:focus {
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .Content {
+    margin: var(--small-gutter-desktop) var(--large-gutter-desktop);
+  }
+
+  .Header {
+    padding-left: 15rem;
+  }
+
+  .Button {
+    margin-right: 15rem;
+  }
+}

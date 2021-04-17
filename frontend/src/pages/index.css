@@ -93,9 +93,20 @@ dt {
   margin-bottom: 0.7rem;
 }
 
+.GetInvolvedContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
 @media (min-width: 768px) {
   * {
     font-size: 1.8rem;
+  }
+
+  .GetInvolvedContainer {
+    flex-direction: row;
+    align-items: flex-start;
   }
 
   p {
@@ -109,7 +120,7 @@ dt {
   }
 
   h5 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 3rem;
     font-weight: 400;
   }
