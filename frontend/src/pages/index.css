@@ -4,7 +4,8 @@
 :root {
   --main-green-color: #49b775;
   --main-light-green: rgba(73, 183, 117, 0.25);
-  --main-black: #000000;
+  --main-black: #000;
+  --main-white: #fff;
   --main-grey: rgba(0, 0, 0, 0.5);
   --large-gutter-desktop: 15rem;
   --medium-gutter-desktop: 8rem;

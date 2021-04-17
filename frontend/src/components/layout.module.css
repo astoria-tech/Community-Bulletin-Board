@@ -16,6 +16,7 @@ div.MainContainer {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  width: 100vw;
 }
 
 main.Content {

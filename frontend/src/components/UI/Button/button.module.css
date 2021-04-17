@@ -1,6 +1,6 @@
 .Button {
   border: 3px solid var(--main-black);
-  background-color: transparent;
+  background-color: var(--main-white);
   font-size: 1.4rem;
   height: 6rem;
   width: 15rem;

@@ -3,6 +3,7 @@ import axios from "axios"
 import SingleEvent from "./SingleEvent/singleEvent"
 import classes from "./upcomingevents.module.css"
 import ErrorMessage from "../ErrorMessage/errorMessage"
+import Button from "../UI/Button/Button"
 import { Link } from "gatsby"
 
 const UpcomingEvents = () => {
@@ -62,11 +63,17 @@ const UpcomingEvents = () => {
     <section className={classes.Events}>
       <header>
         <h2>Upcoming events</h2>
+        <span className={classes.DesktopOnly}>
+          <Button link="/submitEvent">Submit an Event</Button>
+        </span>
       </header>
-      <div className={classes.SubmitEvent}>
-        Hosting an upcoming event in our community?{" "}
-        <Link to="/submitEvent">Submit Your Event Here.</Link>
+      <div className={classes.MobileOnly}>
+        <span className={classes.SubmitEvent}>
+          Hosting an upcoming event in our community?{" "}
+          <Link to="/submitEvent">Submit Your Event Here.</Link>
+        </span>
       </div>
+
       {showEvents}
     </section>
   )

@@ -23,7 +23,9 @@ const getEvents = async () => {
 	try {
 		return base ('Calendar')
 		.select({
-			view: 'Grid view'
+			view: 'Grid view',
+			filterByFormula: "IS_AFTER({Date}, TODAY())",
+			sort: [{field: "Date", direction: "asc"}]
 		})
 		.all();
 	}catch (error) {

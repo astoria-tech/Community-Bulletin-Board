@@ -10,7 +10,6 @@
   border-bottom: 3px solid var(--main-black);
   background-color: var(--main-light-green);
   display: flex;
-  width: 100%;
 }
 
 .Events > header > h2 {
@@ -24,6 +23,13 @@
 .EventContainer:first-of-type {
   border-top: none;
 }
+.DesktopOnly {
+  display: none;
+}
+
+.MobileOnly {
+  display: flex;
+}
 
 .SubmitEvent {
   padding: 2rem 2rem;
@@ -33,7 +39,7 @@
 
 @media (min-width: 768px) {
   .Events > header {
-    padding: 0 15rem;
+    padding-left: 15rem;
     min-height: 15rem;
     display: flex;
     align-items: center;
@@ -41,5 +47,13 @@
 
   .SubmitEvent {
     padding: 3rem 15rem;
+  }
+  .DesktopOnly {
+    display: block;
+    margin-right: 15rem;;
+  }
+
+  .MobileOnly {
+    display: none;
   }
 }
