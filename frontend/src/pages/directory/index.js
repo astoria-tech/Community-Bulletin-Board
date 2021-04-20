@@ -7,7 +7,7 @@ import Button from "../../components/UI/Button/button"
 import { Link } from "gatsby"
 
 const Directory = () => {
-  const [groups, setGroups] = useState()
+  const [groups, setGroups] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
@@ -25,43 +25,44 @@ const Directory = () => {
       })
   }, [])
 
+  function displayGroupColumn(column) {
+    return (
+      <ul className={classes.Groups}>
+        {column.map(group => {
+          return (
+            <li key={group.id}>
+              <SingleOrganization
+                name={group.fields.Name}
+                email={group.fields.Email}
+                website={group.fields.Website}
+                groupDescription={group.fields["Group Description"]}
+                instagram={group.fields.Instagram}
+                twitter={group.fields.Twitter}
+                slack={group.fields.Slack}
+                label={group.fields.Label}
+              />
+            </li>
+          )
+        })}
+      </ul>
+    )
+  }
+
   let showGroups = null
   if (loading)
     showGroups = <p style={{ textAlign: "center" }}>Loading groups...</p>
   else if (error) {
     showGroups = <ErrorMessage />
-  } else {
+  } else if (groups.length) {
+    // SPLIT GROUPS IN TWO ARRAYS AND DISPLAY EACH IN A SEPARATE COLUMN TO PREVENT GAPS BETWEEN CONTAINERS WITH DIFFERENT HEIGHTS
+    // TODO: COME UP WITH A BETTER APPROACH TO ACHIEVE THE SAME LAYOUT
+    let groupsFirstColumn = [...groups].splice(0, groups.length / 2 + 1)
+    let groupsSecondColumn = [...groups].splice(groups.length / 2 + 1)
     showGroups = (
-      <ul className={classes.Groups}>
-        {groups &&
-          groups.map((group, index) => {
-            let gridRowValue = 1
-            let gridColumnValue = 1
-            if (index % 2 !== 0) {
-              gridColumnValue = 2
-            }
-            if (index !== 0 || index !== 1) {
-              gridRowValue = index / 2 + 1
-            }
-            return (
-              <li
-                key={group.id}
-                style={{ gridRow: gridRowValue, gridColumn: gridColumnValue }}
-              >
-                <SingleOrganization
-                  name={group.fields.Name}
-                  email={group.fields.Email}
-                  website={group.fields.Website}
-                  groupDescription={group.fields["Group Description"]}
-                  instagram={group.fields.Instagram}
-                  twitter={group.fields.Twitter}
-                  slack={group.fields.Slack}
-                  label={group.fields.Label}
-                />
-              </li>
-            )
-          })}
-      </ul>
+      <div className={classes.GroupsContainer}>
+        {displayGroupColumn(groupsFirstColumn)}
+        {displayGroupColumn(groupsSecondColumn)}
+      </div>
     )
   }
 
@@ -69,9 +70,9 @@ const Directory = () => {
     <section className={classes.Directory}>
       <header className={classes.Header}>
         <h2>COMMUNITY DIRECTORY</h2>
+        <div>{/* TODO: Filter Buttons */}</div>
       </header>
       {showGroups}
-      <div>{/* TODO: Filter Buttons */}</div>
     </section>
   )
 }

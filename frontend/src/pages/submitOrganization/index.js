@@ -36,15 +36,14 @@ const SubmitOrganization = () => {
           and we will add you upon approval.
         </p>
       </div>
-{/* SUMBIT YOUR ORGANIZATION IFRAME */}
-      {/* <iframe
+      <iframe
         className="airtable-embed airtable-dynamic-height"
-        src="https://airtable.com/embed/shruLzApF5HT3A6rZ?backgroundColor=yellow"
+        src="https://airtable.com/embed/shrlOrCIIOAtz8yCh?backgroundColor=yellow"
         frameBorder="0"
         width="100%"
         height="3200"
         style={{ background: "transparent" }}
-      ></iframe> */}
+      ></iframe>
     </section>
   )
 }

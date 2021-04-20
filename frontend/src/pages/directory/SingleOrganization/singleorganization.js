@@ -22,20 +22,12 @@ const Singleorganization = ({
   return (
     <dl className={classes.SingleGroupContainer}>
       <div className={classes.HeaderContainer}>
-        <div className={classes.Group}>
-          <dt className={classes.visuallyHidden}>Group Name</dt>
-          <dd>
-            <h2>{name}</h2>
-          </dd>
-          <dt className={classes.visuallyHidden}>Icon</dt>
-          <dd>icon here</dd>
-        </div>
+        <h2>{name}</h2>
+        <p>icon</p>
       </div>
       <dt className={classes.visuallyHidden}>Role description</dt>
       <dd className={classes.Description}>{groupDescription}</dd>
       <div className={readMore}>
-        <dt className={classes.visuallyHidden}>Open Volunteer Roles</dt>
-        <dd>dfghj</dd>
         <div className={classes.Links}>
           <div className={classes.Social}>
             {instagram ? (
