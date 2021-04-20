@@ -71,7 +71,7 @@ const Roles = () => {
           <h2>OPEN VOLUNTEER ROLES</h2>
           <div className={classes.MobileOnly}>
             {" "}
-            <span className={[`${classes.SubmitRole}`]}>
+            <span className={classes.SubmitRole}>
               <p>
                 Review roles posted below and reach out to the groups that you
                 are interested in volunteering with. If you are a volunteer

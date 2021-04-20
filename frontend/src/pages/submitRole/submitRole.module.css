@@ -1,45 +1,74 @@
-.SubmitRoleContainer {
-  width: 90%;
-  box-sizing: border-box;
-  border-top: 3px solid var(--main-black);
-  border-bottom: 3px solid var(--main-black);
-  margin: 3rem auto;
-  padding: 3rem 2rem 3rem 2rem;
-  font-weight: 300;
-  font-style: normal;
-  line-height: 125%;
+
+.Header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  font-family: "Fjalla One", Helvetica, sans-serif;
+}
+
+.Header > div {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
   align-items: center;
 }
 
-.Button {
-  border: 3px solid var(--main-black);
-  background-color: transparent;
-  font-size: 2.5rem;
-  height: 8rem;
-  width: 26rem;
-  margin-top: 2rem;
+.DesktopOnly {
+  display: none;
 }
 
-.Button:hover {
-  cursor: pointer;
+.MobileOnly {
+  display: flex;
 }
 
-.Button:active {
-  -webkit-box-shadow: inset -2px -2px 3px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: inset -2px -2px 3px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: inset -2px -2px 3px 0px rgba(0, 0, 0, 0.75);
+span.ViewRoles {
+  font-weight: 600;
+  padding: 3rem 3rem;
+  border-top: 3px solid var(--main-black);
+  border-bottom: 3px solid var(--main-black);
 }
 
-.Button:focus {
-  outline: none;
+.Header h2 {
+  font-size: 3rem;
+  line-height: 4.5rem;
+}
+
+.DesktopOnly > p {
+  padding: 0 var(--small-gutter-mobile);
+  border-top: 3px solid var(--main-black);
+  border-bottom: 3px solid var(--main-black);
 }
 
 @media (min-width: 768px) {
-  .SubmitRoleContainer {
-    width: 57%;
-    padding: 3rem 4.5rem 3rem 4.5rem;
+  .Header {
+    padding: 4rem 0;
+  }
+
+  .DesktopOnly > p {
+    padding: 3rem var(--large-gutter-desktop);
+  }
+
+  .DesktopOnly {
+    display: block;
+  }
+
+  .MobileOnly {
+    display: none;
+  }
+
+  .Header > div {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--large-gutter-desktop);
+  }
+
+  .Header > div > h2 {
+    margin: 0;
+  }
+
+  .Header h2 {
+    font-size: 5rem;
+    /* line-height: 6.5rem; */
   }
 }

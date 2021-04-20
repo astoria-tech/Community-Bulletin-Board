@@ -1,0 +1,123 @@
+.SingleGroupContainer {
+  border: 3px solid var(--main-black);
+  height: min-content;
+}
+
+.HeaderContainer {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 0.3rem solid var(--main-black);
+  background-color: var(--main-light-green);
+  margin-bottom: 3rem;
+  line-break: strict;
+}
+
+.Group > dd > h2 {
+  margin: 0;
+}
+
+.Group {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 3rem;
+}
+
+.Button {
+  border: none;
+  background-color: transparent;
+  margin: 0 auto;
+  display: block;
+  padding-top: 1rem;
+}
+
+.Button:hover {
+  cursor: pointer;
+}
+
+.Button:focus {
+  outline: none;
+}
+
+.ButtonContainer {
+  width: 100%;
+  border-top: 3px solid var(--main-black);
+  max-height: 5rem;
+}
+
+.NotShow {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.visuallyHidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.Links {
+  display: flex;
+  flex-direction: column;
+  border-top: 3px solid var(--main-black);
+}
+.Links > a {
+  text-decoration: none;
+}
+
+.Social,
+.Website {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem 2rem;
+}
+
+@media (min-width: 768px) {
+  .SingleGroupContainer {
+    margin-top: 3rem;
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+  }
+  .Group {
+    flex-direction: row;
+  }
+  .Links {
+    flex-direction: row;
+  }
+
+  .Group > dd > h2 {
+    flex: 4;
+  }
+  .Social,
+  .Website {
+    flex: 1;
+  }
+  .Website {
+    border-left: 3px solid var(--main-black);
+  }
+
+  .HeaderContainer {
+    flex-direction: row;
+  }
+
+  .Role {
+    border-right: 3px solid var(--main-black);
+    flex: 2;
+  }
+
+  .Description {
+    padding: 0 3rem 0 3rem;
+  }
+}

@@ -31,6 +31,9 @@ a::before,
 a:active,
 a::after {
   color: var(--main-black);
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  text-decoration: none;
 }
 dl,
 dt,
