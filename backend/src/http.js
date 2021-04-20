@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const { getOpenRoles, getEvents } = require('./airtable');
+const { getOpenRoles, getEvents, getCommunityGroups } = require('./airtable');
 
 // Web server config
 const port = 3000;
@@ -19,15 +19,31 @@ app.get(
 app.get(
 	'/api/getEvents',
 	cors({ origin: 'http://localhost:8000' }),
-	async (req, res) => {
+	async (req, res, next) => {
 		try{
 			const data = await getEvents();
 		const rawJson = data.map((item) => item._rawJson);
 		res.json(rawJson);
 		}
 		catch(err){
-			console.log(console.error(err))
-			res.send(err)
+			console.warn(console.error(err))
+			next(err)
+		}
+	}
+);
+
+app.get(
+	'/api/getCommunityGroups',
+	cors({ origin: 'http://localhost:8000' }),
+	async (req, res, next) => {
+		try{
+			const data = await getCommunityGroups();
+		const rawJson = data.map((item) => item._rawJson);
+		res.json(rawJson);
+		}
+		catch(err){
+			console.warn(console.error(err))
+			next(err)
 		}
 	}
 );
