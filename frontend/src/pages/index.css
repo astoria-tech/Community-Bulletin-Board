@@ -3,6 +3,7 @@
 
 :root {
   --main-green-color: #49b775;
+
   --main-light-green: rgba(73, 183, 117, 0.25);
   --main-black: #000;
   --main-white: #fff;
@@ -38,11 +39,16 @@ a::after {
 dl,
 dt,
 dd,
-dt {
+dt,
+ul,
+li,
+ol {
   margin: 0;
   padding: 0;
 }
-
+li {
+  list-style: none;
+}
 .visuallyHidden {
   position: absolute;
   overflow: hidden;

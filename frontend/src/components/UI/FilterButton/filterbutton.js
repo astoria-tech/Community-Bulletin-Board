@@ -1,0 +1,16 @@
+import React from "react"
+import classes from "./filterButton.module.css"
+
+//for internal navigation only as it uses <Link />
+const FilterButton = props => {
+  return (
+    <button
+      className={[classes.Button, classes[props.btnType]].join(" ")}
+      onClick={props.click}
+    >
+      {props.children}
+    </button>
+  )
+}
+
+export default FilterButton

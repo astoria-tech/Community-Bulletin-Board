@@ -19,11 +19,6 @@ span.SubmitRole{
   font-family: "Fjalla One", Helvetica, sans-serif;
 }
 
-.RolesHeader h2 {
-  font-size: 3rem;
-  line-height: 4.5rem;
-}
-
 .Description {
   width: 90%;
   margin: 3rem auto;
@@ -89,8 +84,5 @@ span.SubmitRole{
     padding: 5rem 0;
   }
 
-  .RolesHeader h2 {
-    font-size: 5rem;
-    line-height: 6.5rem;
-  }
+
 }

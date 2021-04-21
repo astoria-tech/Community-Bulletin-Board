@@ -1,49 +1,58 @@
 .Header {
-  display: flex;
-  flex-direction: column;
-  font-family: "Fjalla One", Helvetica, sans-serif;
-  word-break: keep-all;
-}
-
-header.Header > h2 {
-  margin: 0;
-  font-size: 3rem;
-  line-height: 4.5rem;
+  border-bottom: 3px solid black;
 }
 
 .GroupsContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
 }
 
 .Groups {
   display: flex;
   flex-direction: column;
-  list-style: none;
+}
+
+.FilterButtons {
+  border-top: 3px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.FilterButton {
+  min-width: 48%;
+  display: flex;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
-  .Directory {
-    width: 85%;
-    margin: 0 auto;
+  .Header {
+    padding: var(--small-gutter-desktop) 0;
   }
 
-  .Header {
-    padding: 0 var(--large-gutter-desktop);
+  .FilterButtons {
+    padding: var(--small-gutter-desktop) var(--large-gutter-desktop) 0;
+  }
+
+  .FilterButton {
+    min-width: 32%;
+  }
+
+  header.Header > h2 {
+    margin-left: var(--large-gutter-desktop);
+  }
+
+  .Directory {
+    margin: 0 auto;
   }
 
   .GroupsContainer {
     flex-direction: row;
+    justify-content: space-between;
+    margin: var(--small-gutter-desktop) var(--large-gutter-desktop);
   }
 
   .Groups {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-
-  .Header h2 {
-    font-size: 5rem;
+    width: 48%;
   }
 }

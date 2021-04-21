@@ -1,6 +1,8 @@
 .SingleGroupContainer {
   border: 3px solid var(--main-black);
   margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .HeaderContainer {
@@ -78,12 +80,10 @@
 .Description {
   padding: 0 1.5rem;
 }
+
+
 @media (min-width: 768px) {
-  .SingleGroupContainer {
-    max-height: 100%;
-    min-width: 100%;
-    object-fit: cover;
-  }
+
 
   .HeaderContainer > h2 {
     margin-left: 2.5rem;

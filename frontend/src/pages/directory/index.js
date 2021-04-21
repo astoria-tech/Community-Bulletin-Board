@@ -3,14 +3,18 @@ import axios from "axios"
 import classes from "./directory.module.css"
 import ErrorMessage from "../../components/ErrorMessage/errorMessage"
 import SingleOrganization from "./SingleOrganization/Singleorganization"
-import Button from "../../components/UI/Button/button"
+import FilterButton from "../../components/UI/FilterButton/filterbutton"
 import { Link } from "gatsby"
 
 const Directory = () => {
   const [groups, setGroups] = useState([])
+  const [filteredGroups, setFilteredGroups] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [categories, setCategories] = useState([])
+  const [selectedCategories, setSelectedCategories] = useState(new Map())
 
+  // fetch all organizations
   useEffect(() => {
     setLoading(true)
     axios
@@ -18,12 +22,59 @@ const Directory = () => {
       .then(res => {
         setLoading(false)
         setGroups(res.data)
+        setFilteredGroups(res.data)
       })
       .catch(err => {
         setLoading(false)
         setError(err)
       })
   }, [])
+
+  //set categories from the data received
+  useEffect(() => {
+    if (groups.length) {
+      let labels = []
+      for (let group of groups) {
+        if (group.fields.Label && group.fields.Label.length) {
+          for (let label of group.fields.Label) {
+            if (!labels.includes(label)) {
+              labels.push(label)
+            }
+          }
+        }
+      }
+      setCategories(labels)
+    }
+  }, [groups])
+
+  //filter groups if selected categories change
+  useEffect(() => {
+    //display all groups if no filter selected
+
+    if (!selectedCategories.size) {
+      setFilteredGroups(groups)
+    } else {
+      setFilteredGroups(
+        groups.filter(group => {
+          for (let label of group.fields.Label) {
+            if (selectedCategories.has(label)) {
+              return true
+            }
+          }
+        })
+      )
+    }
+  }, [selectedCategories])
+
+  function toggleCategory(category) {
+    if (selectedCategories.has(category)) {
+      let selectedCategoriesCopy = new Map(selectedCategories)
+      selectedCategoriesCopy.delete(category)
+      setSelectedCategories(new Map(selectedCategoriesCopy))
+    } else {
+      setSelectedCategories(new Map(selectedCategories.set(category, " ")))
+    }
+  }
 
   function displayGroupColumn(column) {
     return (
@@ -49,6 +100,7 @@ const Directory = () => {
   }
 
   let showGroups = null
+  let filterButtons = null
   if (loading)
     showGroups = <p style={{ textAlign: "center" }}>Loading groups...</p>
   else if (error) {
@@ -56,8 +108,13 @@ const Directory = () => {
   } else if (groups.length) {
     // SPLIT GROUPS IN TWO ARRAYS AND DISPLAY EACH IN A SEPARATE COLUMN TO PREVENT GAPS BETWEEN CONTAINERS WITH DIFFERENT HEIGHTS
     // TODO: COME UP WITH A BETTER APPROACH TO ACHIEVE THE SAME LAYOUT
-    let groupsFirstColumn = [...groups].splice(0, groups.length / 2 + 1)
-    let groupsSecondColumn = [...groups].splice(groups.length / 2 + 1)
+    let groupsFirstColumn = [...filteredGroups].splice(
+      0,
+      filteredGroups.length / 2 + 1
+    )
+    let groupsSecondColumn = [...filteredGroups].splice(
+      filteredGroups.length / 2 + 1
+    )
     showGroups = (
       <div className={classes.GroupsContainer}>
         {displayGroupColumn(groupsFirstColumn)}
@@ -66,11 +123,35 @@ const Directory = () => {
     )
   }
 
+  if (categories.length) {
+    filterButtons = (
+      <div className={classes.FilterButtons}>
+        {categories.map(category => {
+          let btnType = "NotSelected"
+          if (selectedCategories.has(category)) {
+            btnType = "Selected"
+          }
+          return (
+            //using category as a key since it will always be a unique value
+            <span className={classes.FilterButton} key={category}>
+              <FilterButton
+                click={() => toggleCategory(category)}
+                btnType={btnType}
+              >
+                {category}
+              </FilterButton>
+            </span>
+          )
+        })}
+      </div>
+    )
+  }
+
   return (
     <section className={classes.Directory}>
       <header className={classes.Header}>
         <h2>COMMUNITY DIRECTORY</h2>
-        <div>{/* TODO: Filter Buttons */}</div>
+        {filterButtons}
       </header>
       {showGroups}
     </section>
