@@ -34,7 +34,7 @@ a::after {
   color: var(--main-black);
   font-size: 1.8rem;
   line-height: 2.7rem;
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 dl,
 dt,
@@ -137,7 +137,7 @@ dt {
   h6 {
     font-size: 1.8rem;
     line-height: 2.25rem;
-    font-weight: 500;
+    font-weight: 400;
     font-family: "DM Mono", Courier, monospace;
   }
 }

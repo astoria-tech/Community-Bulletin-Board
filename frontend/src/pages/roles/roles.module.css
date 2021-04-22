@@ -20,13 +20,14 @@ span.SubmitRole{
 }
 
 .Description {
-  width: 90%;
+  padding: 0 2rem;
   margin: 3rem auto;
   font-weight: 300;
   font-style: normal;
   font-weight: 300;
   font-size: 1.8rem;
   line-height: 125%;
+  border-top: 3px solid black;
 }
 
 .RolesContainer {
@@ -80,7 +81,6 @@ span.SubmitRole{
   }
   .Description {
     width: 100%;
-    border-top: 3px solid black;
     padding: 5rem 0;
   }
 

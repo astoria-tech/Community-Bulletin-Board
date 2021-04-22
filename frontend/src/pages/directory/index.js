@@ -4,10 +4,13 @@ import classes from "./directory.module.css"
 import ErrorMessage from "../../components/ErrorMessage/errorMessage"
 import SingleOrganization from "./SingleOrganization/Singleorganization"
 import FilterButton from "../../components/UI/FilterButton/filterbutton"
-import { Link } from "gatsby"
+import Button from "../../components/UI/Button/button"
+import {Link} from 'gatsby'
 
 const Directory = () => {
+  //groups are for stiring the data received from Airtable
   const [groups, setGroups] = useState([])
+  //filteredGroups are for displaying the groups
   const [filteredGroups, setFilteredGroups] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -22,6 +25,7 @@ const Directory = () => {
       .then(res => {
         setLoading(false)
         setGroups(res.data)
+        //as no filters applied finitially, filteredGroups are the same as groups
         setFilteredGroups(res.data)
       })
       .catch(err => {
@@ -50,9 +54,9 @@ const Directory = () => {
   //filter groups if selected categories change
   useEffect(() => {
     //display all groups if no filter selected
-
     if (!selectedCategories.size) {
       setFilteredGroups(groups)
+      //if filter was applied by user (=selectedCategories are not empty), filter based on that
     } else {
       setFilteredGroups(
         groups.filter(group => {
@@ -67,6 +71,7 @@ const Directory = () => {
   }, [selectedCategories])
 
   function toggleCategory(category) {
+    //check if the category was selected already, remove or add based on that
     if (selectedCategories.has(category)) {
       let selectedCategoriesCopy = new Map(selectedCategories)
       selectedCategoriesCopy.delete(category)
@@ -125,24 +130,26 @@ const Directory = () => {
 
   if (categories.length) {
     filterButtons = (
-      <div className={classes.FilterButtons}>
-        {categories.map(category => {
-          let btnType = "NotSelected"
-          if (selectedCategories.has(category)) {
-            btnType = "Selected"
-          }
-          return (
-            //using category as a key since it will always be a unique value
-            <span className={classes.FilterButton} key={category}>
-              <FilterButton
-                click={() => toggleCategory(category)}
-                btnType={btnType}
-              >
-                {category}
-              </FilterButton>
-            </span>
-          )
-        })}
+      <div className={classes.FilterButtonsContainer}>
+         <h6>Filter By Category</h6>
+        <div className={classes.FilterButtons}>
+          {categories.map(category => {
+            let btnType = "NotSelected"
+            if (selectedCategories.has(category)) {
+              btnType = "Selected"
+            }
+            return (
+              <span className={classes.FilterButton} key={category}>
+                <FilterButton
+                  click={() => toggleCategory(category)}
+                  btnType={btnType}
+                >
+                  {category}
+                </FilterButton>
+              </span>
+            )
+          })}
+        </div>
       </div>
     )
   }
@@ -154,6 +161,21 @@ const Directory = () => {
         {filterButtons}
       </header>
       {showGroups}
+      <div className={classes.Description}>
+        <h2>WANT TO ADD YOUR ORGANIZATION?</h2>
+        <p>
+        We are looking to feature organizations across Astoria so that our neighbors can become better acqainted with services, aid groups, and other organizations that make our community strong. Interested in getting your organization added to our directory?
+          <br />
+          <br/>
+          <Button link="/submitOrganization">Submit Your Org</Button>
+        </p>
+      </div>
+      <div className={classes.Description}>
+        <h2>ABOUT OUR COMMUNITY DIRECTORY</h2>
+        <p>
+        The community directory is a list showcasing local groups in Astoria, Queens. These groups are providing community services, keeping our infrastructure running, and aiding our neighbors in their times of need. Many of these organizations are run by volunteers and are always in need of a helping hand, which is why we’ve also compiled a list of <Link to="/roles">Open Volunteer Roles</Link> for those who want to get involved. This was created by a group of volunteers from <a href="http://astoria.digital/">Astoria Digital. </a>
+        </p>
+      </div>
     </section>
   )
 }
