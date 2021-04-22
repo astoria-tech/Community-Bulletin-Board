@@ -1,10 +1,20 @@
 import React, { useState } from "react"
 import classes from "./singleorganization.module.css"
 import normalizeUrl from "normalize-url"
-import TwitterIcon from "../../../assets/i-twitter.svg"
-import InstagramIcon from "../../../assets/i-instagram.svg"
-import SlackIcon from "../../../assets/i-slack.svg"
-import EmailIcon from "../../../assets/i-email.svg"
+import {
+  EmailIcon,
+  TwitterIcon,
+  InstagramIcon,
+  SlackIcon,
+  HousingIcon,
+  SustainabilityIcon,
+  YouthIcon,
+  PetsIcon,
+  CommunityIcon,
+  BurgerIcon,
+  AgricultureIcon,
+  MainIcon,
+} from "../../../assets/index"
 
 const Singleorganization = ({
   name,
@@ -19,11 +29,32 @@ const Singleorganization = ({
   const [show, setShow] = useState(false)
   const readMore = show ? classes.Show : classes.NotShow
 
+  function displayIcon(label) {
+    switch (label) {
+      case "community":
+        return CommunityIcon
+      case "youth":
+        return YouthIcon
+      case "housing":
+        return HousingIcon
+      case "sustainability":
+        return SustainabilityIcon
+      case "pets":
+        return PetsIcon
+      case "food":
+        return BurgerIcon
+      case "agriculture":
+        return AgricultureIcon
+      default:
+        return MainIcon
+    }
+  }
+
   return (
     <dl className={classes.SingleGroupContainer}>
       <div className={classes.HeaderContainer}>
         <h2>{name}</h2>
-        <p>icon</p>
+        <span className={classes.Icon}><img src={displayIcon(label[0])} alt={`${label[0]}`} /></span>
       </div>
       <dt className={classes.visuallyHidden}>Role description</dt>
       <dd className={classes.Description}>{groupDescription}</dd>

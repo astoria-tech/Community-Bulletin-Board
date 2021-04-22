@@ -12,11 +12,22 @@
   border-bottom: 0.3rem solid var(--main-black);
   background-color: var(--main-light-green);
   margin-bottom: 3rem;
-  word-break: keep-all;
+  justify-content: space-around;
 }
 
 .HeaderContainer > h2 {
   margin-left: 1.5rem;
+}
+
+.Icon >img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.Icon{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
 .Button {
@@ -84,6 +95,11 @@
 
 
 @media (min-width: 768px) {
+
+  .Icon >img {
+    width: 7rem;
+    height: 7rem;
+  }
 
 .SingleGroupContainer{
   width: 100%
