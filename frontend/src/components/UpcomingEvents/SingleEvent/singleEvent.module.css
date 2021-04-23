@@ -17,9 +17,9 @@
   cursor: pointer;
 }
 
-.Button:focus {
+/* .Button:focus {
   outline: none;
-}
+} */
 
 .EventTitleContainer {
   display: flex;

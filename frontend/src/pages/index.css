@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
 
 :root {
   --main-green-color: #49b775;
-
   --main-light-green: rgba(73, 183, 117, 0.25);
+  --tertiary-green: #77c998;
   --main-black: #000;
   --main-white: #fff;
   --main-grey: rgba(0, 0, 0, 0.5);

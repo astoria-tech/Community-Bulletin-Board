@@ -89,9 +89,9 @@
   cursor: pointer;
 }
 
-.Button:focus {
+/* .Button:focus {
   outline: none;
-}
+} */
 
 .ButtonContainer {
   width: 100%;

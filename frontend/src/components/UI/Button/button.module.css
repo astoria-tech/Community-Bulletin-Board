@@ -17,7 +17,7 @@
 }
 
 .Button:focus {
-  outline: none;
+  outline: red;
 }
 
 @media (min-width: 768px) {

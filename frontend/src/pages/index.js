@@ -43,8 +43,8 @@ const IndexPage = () => {
             or donate, and connect with them through their website, social
             media, newsletters.
             <br />
-            <br />
-            <br />
+
+
           </Container>
         </div>
       </Accordeon>
