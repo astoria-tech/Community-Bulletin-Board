@@ -70,12 +70,12 @@ span.SubmitRole{
     width: 57%;
   }
 
-  .RolesHeader > div > h2 {
+  .RolesHeader > div > h1 {
     margin: 0;
   }
 
   .Description > p,
-  h2 {
+  h1 {
     width: 57%;
     margin: 0 auto;
   }

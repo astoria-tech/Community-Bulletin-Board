@@ -68,7 +68,7 @@
 }
 
 .Show {
-  padding: 0 2rem 0 2rem;
+  padding: 0 2rem;
 }
 
 .Remote {
@@ -99,6 +99,10 @@
   height: 5rem;
 }
 
+.SingleRoleContainer .Show ~ .ButtonContainer {
+  border-top: none;
+}
+
 .NotShow {
   height: 0;
   overflow: hidden;
@@ -123,12 +127,44 @@
   border: 0;
 }
 
+.ContactsContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 -2rem;
+  border-top: 3px solid var(--main-black);
+  border-bottom: 3px solid var(--main-black);
+}
+
+.Contact{
+  min-height: 7rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Contact:first-child {
+  border-bottom: 3px solid var(--main-black);
+}
+
+.Contact a{
+  text-decoration: none;
+
+}
+
 @media (min-width: 768px) {
-  .SingleRoleContainer {
-    min-width: 110rem;
-    max-width: 150rem;
-    width: 57%;
-    font-size: 1.8vw;
+  .ContactsContainer {
+    flex-direction: row;
+    margin: 0 -3rem;
+  }
+
+  .Contact {
+    flex: 1;
+  }
+
+  .Contact:first-child {
+    border-right: 3px solid var(--main-black);
+    border-bottom: none;
   }
 
   .HeaderContainer {
@@ -159,10 +195,10 @@
   }
 
   .Description {
-    padding: 0 3rem 0 3rem;
+    padding: 0 3rem;
   }
 
   .Show {
-    padding: 0 3rem 0 3rem;
+    padding: 0 3rem;
   }
 }

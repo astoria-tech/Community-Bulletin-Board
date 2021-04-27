@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap");
 
 :root {
   --main-green-color: #49b775;
@@ -64,6 +64,8 @@ h1 {
   font-weight: 400;
   font-family: "Fjalla One", Helvetica, sans-serif;
   text-transform: uppercase;
+  font-size: 3rem;
+  line-height: 3.9rem;
 }
 
 p {
@@ -123,6 +125,11 @@ dt {
     line-height: 2.7rem;
   }
 
+  h1 {
+    font-size: 5rem;
+    line-height: 6.5rem;
+  }
+
   h2 {
     font-size: 5rem;
     line-height: 6.5rem;
@@ -139,5 +146,9 @@ dt {
     line-height: 2.25rem;
     font-weight: 400;
     font-family: "DM Mono", Courier, monospace;
+  }
+
+  .mobileOnly {
+    display: none;
   }
 }

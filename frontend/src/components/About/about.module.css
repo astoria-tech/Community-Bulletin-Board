@@ -1,20 +1,17 @@
-.AboutContainer{
-  width: 90%;
-  box-sizing: border-box;
-  margin: 3rem auto;
-  padding: 0 2rem 0 3rem;
-  font-weight: 300;
-  font-style: normal;
-  line-height: 125%;
+.AboutContainer {
+  margin: 3rem var(--small-gutter-mobile);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.AboutContainer h1{
+  margin: 0;
 }
 
 @media (min-width: 768px) {
   .AboutContainer {
-    width: 57%;
-    padding: 0 3rem 0 4rem;
+    margin: 3rem var(--large-gutter-desktop);
   }
 }

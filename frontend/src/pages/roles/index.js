@@ -68,7 +68,7 @@ const Roles = () => {
     <section className={classes.RolesContainer}>
       <div className={classes.RolesHeader}>
         <div>
-          <h2>OPEN VOLUNTEER ROLES</h2>
+          <h1>OPEN VOLUNTEER ROLES</h1>
           <div className={classes.MobileOnly}>
             {" "}
             <span className={classes.SubmitRole}>
