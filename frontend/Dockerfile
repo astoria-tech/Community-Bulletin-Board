@@ -9,6 +9,5 @@ RUN npm install
 # Add the source
 ADD *js *json *md ./
 ADD src src
-RUN npm run build
 
-CMD ["npm", "run", "serve"]
+CMD ["npm", "start"]
