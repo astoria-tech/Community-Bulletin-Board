@@ -19,4 +19,31 @@ const getOpenRoles = async () => {
 	}
 };
 
-module.exports = { getOpenRoles };
+const getEvents = async () => {
+	try {
+		return base('Calendar')
+			.select({
+				view: 'Grid view',
+				filterByFormula: 'IS_AFTER({Date}, TODAY())',
+				sort: [{ field: 'Date', direction: 'asc' }],
+			})
+			.all();
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+const getCommunityGroups = async () => {
+	try {
+		return base('Community Groups')
+			.select({
+				view: 'Grid view',
+				filterByFormula: "{Is it approved?} = '1'"
+			})
+			.all();
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+module.exports = { getOpenRoles, getEvents, getCommunityGroups };

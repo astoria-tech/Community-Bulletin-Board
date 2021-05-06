@@ -29,7 +29,12 @@ const SingleRole = ({
         </div>
         <div className={classes.Remote}>
           <dt className={classes.visuallyHidden}>Is it remote</dt>
-          <dd className={classes.Remote_dd}>{isRemote ? "Remote" : "On-site"}</dd>
+          <dd className={classes.IsRemote}>
+            <h6>{isRemote ? "Remote" : "On-site"}</h6>
+          </dd>
+          <dd className={classes.TimeCommitment}>
+            <h6>{timeCommitment}</h6>
+          </dd>
         </div>
       </div>
       <dt className={classes.visuallyHidden}>Role description</dt>
@@ -45,18 +50,18 @@ const SingleRole = ({
           <br />
           <a href={howToGetStartedLink}>{howToGetStartedLink}</a>
         </dd>
-        <dt>Contact us for more information</dt>
-        <dd>
-          <a href={`mailto:${moreInformation}`}>
-            {moreInformation.toLowerCase()}
-          </a>
-        </dd>
         <dt>{communityGroup}</dt>
         <dd>{groupDescription}</dd>
-        <dt className={classes.visuallyHidden}>Group website</dt>
-        <dd>
-          <a href={normalizeUrl(website)}>{website}</a>
-        </dd>
+        <div className={classes.ContactsContainer}>
+          <div className={classes.Contact}>
+            <a href={`mailto:${moreInformation}`}>
+              Send {communityGroup} An Email
+            </a>
+          </div>
+          <div className={classes.Contact}>
+            <a href={normalizeUrl(website)}>Join {communityGroup} here</a>
+          </div>
+        </div>
       </div>
       <div className={classes.ButtonContainer}>
         <button
@@ -65,7 +70,7 @@ const SingleRole = ({
             setShow(prev => !prev)
           }}
         >
-          {show ? "Less -" : "More +"}
+          <p>{show ? "Less -" : "More +"}</p>
         </button>
       </div>
     </dl>

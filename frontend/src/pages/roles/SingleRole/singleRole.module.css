@@ -1,0 +1,204 @@
+.SingleRoleContainer {
+  width: 85%;
+  border: 3px solid var(--main-black);
+  margin: 4rem auto;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 125%;
+}
+
+.HeaderContainer {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 0.3rem solid var(--main-black);
+  margin-bottom: 3rem;
+  max-width: 100vw;
+}
+
+.HeaderContainer h1 {
+  font-family: "Fjalla One", Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.Role {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--main-light-green);
+  text-align: center;
+  padding: 0 3rem;
+}
+
+.IsRemote {
+  margin: 0;
+  border-bottom: 3px solid var(--main-black);
+  border-top: 3px solid var(--main-black);
+  height: fit-content;
+  min-height: 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.IsRemote h6 {
+  font-size: 1.8rem;
+  line-height: 2.25rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.TimeCommitment h6 {
+  font-size: 1.8rem;
+  line-height: 2.25rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.TimeCommitment {
+  min-height: 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Description {
+  padding: 0 2rem 0 2rem;
+}
+
+.Show {
+  padding: 0 2rem;
+}
+
+.Remote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Button {
+  border: none;
+  background-color: transparent;
+  margin: 0 auto;
+  display: block;
+  padding-top: 1rem;
+}
+
+.Button:hover {
+  cursor: pointer;
+}
+
+/* .Button:focus {
+  outline: none;
+} */
+
+.ButtonContainer {
+  width: 100%;
+  border-top: 3px dashed var(--main-black);
+  height: 5rem;
+}
+
+.SingleRoleContainer .Show ~ .ButtonContainer {
+  border-top: none;
+}
+
+.NotShow {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.Remote dd {
+  width: 100%;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.visuallyHidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.ContactsContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 -2rem;
+  border-top: 3px solid var(--main-black);
+  border-bottom: 3px solid var(--main-black);
+}
+
+.Contact{
+  min-height: 7rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Contact:first-child {
+  border-bottom: 3px solid var(--main-black);
+}
+
+.Contact a{
+  text-decoration: none;
+
+}
+
+@media (min-width: 768px) {
+  .ContactsContainer {
+    flex-direction: row;
+    margin: 0 -3rem;
+  }
+
+  .Contact {
+    flex: 1;
+  }
+
+  .Contact:first-child {
+    border-right: 3px solid var(--main-black);
+    border-bottom: none;
+  }
+
+  .HeaderContainer {
+    flex-direction: row;
+  }
+
+  .Remote {
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .IsRemote {
+    border-top: none;
+    padding-top: 1.5rem;
+    flex: 1;
+  }
+
+  dd.TimeCommitment {
+    text-align: center;
+    flex: 1;
+  }
+
+  .Role {
+    border-right: 3px solid var(--main-black);
+    flex: 2;
+  }
+
+  .Description {
+    padding: 0 3rem;
+  }
+
+  .Show {
+    padding: 0 3rem;
+  }
+}

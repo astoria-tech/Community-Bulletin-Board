@@ -1,0 +1,88 @@
+.RolesHeader > div {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+span.SubmitRole{
+  font-weight: 600;
+  padding: 3rem 3rem;
+  border-top: 3px solid var(--main-black);
+  border-bottom: 3px solid var(--main-black);
+}
+
+.RolesHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: "Fjalla One", Helvetica, sans-serif;
+}
+
+.Description {
+  padding: 0 2rem;
+  margin: 3rem auto;
+  font-weight: 300;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 125%;
+  border-top: 3px solid black;
+}
+
+.RolesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.DesktopOnly {
+  display: none;
+}
+
+.MobileOnly {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .RolesHeader {
+    width: 100%;
+    border-bottom: 3px solid black;
+    margin: 0 0 5rem 0;
+    padding: 4rem 0;
+  }
+
+  .DesktopOnly {
+    display: block;
+  }
+
+  .MobileOnly {
+    display: none;
+  }
+
+  .RolesHeader > div {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 110rem;
+    max-width: 150rem;
+    width: 57%;
+  }
+
+  .RolesHeader > div > h1 {
+    margin: 0;
+  }
+
+  .Description > p,
+  h1 {
+    width: 57%;
+    margin: 0 auto;
+  }
+  .Description {
+    width: 100%;
+    padding: 5rem 0;
+  }
+
+
+}

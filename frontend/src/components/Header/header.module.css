@@ -1,24 +1,58 @@
 .Header {
   background: var(--main-green-color);
-  width: 100vw;
-  text-transform: uppercase;
   margin-bottom: 1.45rem;
   min-height: 28rem;
-  display: flex;
-  align-items: center;
-  justify-content: start;
   padding: 1rem;
 }
 
 .HeaderContainer h1 {
-  font-size: 7rem;
-  line-height: 7rem;
+  display: none;
+}
+
+.HamburgerMenuContainer {
+  z-index: 500;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 5rem;
+  margin-top: 2rem;
+}
+
+.HamburgerMenuContainer:hover {
+  cursor: pointer;
+}
+.HamburgerMenuContainer:focus {
+  outline: auto;
+}
+
+.HamburgerMenuContainer.Open {
+  position: fixed;
+  /* react-hamburger-meu shifts right when it's open on mobile, changing the width fixes it */
+  width: 90%;
 }
 
 @media (min-width: 768px) {
   .HeaderContainer h1 {
+    text-transform: uppercase;
     margin-left: 7.4rem;
     font-size: 8rem;
     line-height: 8rem;
+    text-align: start;
+    display: inline-block;
+  }
+
+  .HeaderContainer {
+    padding-left: 4rem;
+  }
+
+  .HamburgerMenuContainer {
+    margin-right: 4rem;
+    margin-top: 2rem;
+  }
+
+  .HamburgerMenuContainer.Open {
+    width: 91%;
   }
 }

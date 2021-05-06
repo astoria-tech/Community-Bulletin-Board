@@ -1,0 +1,33 @@
+.Button {
+  border: 3px solid rgba(0, 0, 0, 0.5);
+  background-color: var(--main-white);
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.4rem;
+  height: 6rem;
+  width: 15rem;
+  box-sizing: border-box;
+  margin: 0.5rem;
+  text-transform: capitalize;
+}
+
+.Button:hover {
+  cursor: pointer;
+}
+
+.Button:focus {
+  outline: none;
+}
+
+.Selected {
+  background-color: var(--main-green-color);
+  border: 3px solid var(--main-black);
+  color: var(--main-black);
+}
+
+@media (min-width: 768px) {
+  .Button {
+    font-size: 2rem;
+    height: 9rem;
+    width: 25rem;
+  }
+}

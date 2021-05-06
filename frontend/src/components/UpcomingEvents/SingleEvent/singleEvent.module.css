@@ -1,0 +1,66 @@
+.Button {
+  border: none;
+  background-color: transparent;
+  margin: 0 auto;
+  display: block;
+  padding-top: 1rem;
+  margin-right: 2rem;
+  font-size: 3rem;
+}
+.NotShow {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.Button:hover {
+  cursor: pointer;
+}
+
+/* .Button:focus {
+  outline: none;
+} */
+
+.EventTitleContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 8rem;
+}
+
+.EventTitle {
+  margin: 0 2rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+.DateLocation {
+  color: var(--main-grey);
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+.EventDescription {
+  border-top: 3px solid var(--main-grey);
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .EventDescription {
+    padding: 3rem 15rem;
+  }
+
+  .EventTitle {
+    margin: 0 15rem;
+    font-size: 1.4rem;
+    line-height: 3rem;
+  }
+
+  .Button {
+    margin-right: 15rem;
+  }
+}

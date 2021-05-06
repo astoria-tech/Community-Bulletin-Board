@@ -1,0 +1,102 @@
+.Header {
+  border-bottom: 3px solid black;
+}
+
+.Header > h2 {
+  text-align: center;
+}
+
+.GroupsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.Groups {
+  display: flex;
+  flex-direction: column;
+}
+
+.FilterButtonsContainer {
+  border-top: 3px solid black;
+  padding-bottom: 2rem;
+}
+
+.FilterButtonsContainer > h6 {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.FilterButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.FilterButton {
+  min-width: 48%;
+  display: flex;
+  justify-content: center;
+}
+.Description {
+  padding: 0 2rem;
+  margin: 3rem auto;
+  font-weight: 300;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 125%;
+  border-top: 3px solid black;
+}
+
+@media (min-width: 768px) {
+  .Header {
+    padding: var(--small-gutter-desktop) 0;
+  }
+  .Header > h2 {
+    text-align: left;
+    padding: 0 var(--small-gutter-desktop) var(--small-gutter-desktop);
+  }
+
+  .FilterButtonsContainer > h6 {
+    padding-left: 23rem;
+    text-align: start;
+    margin-bottom: 0;
+  }
+
+  .FilterButtons {
+    padding: var(--small-gutter-desktop) var(--large-gutter-desktop) 0;
+  }
+
+  .FilterButton {
+    min-width: 32%;
+  }
+
+  header.Header > h2 {
+    margin-left: var(--large-gutter-desktop);
+  }
+
+  .Directory {
+    margin: 0 auto;
+  }
+
+  .GroupsContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: var(--small-gutter-desktop) var(--large-gutter-desktop);
+  }
+
+  .Groups {
+    width: 48%;
+  }
+
+  .Description > p,
+  h2 {
+    width: 57%;
+    margin: 0 auto;
+  }
+  .Description {
+    width: 100%;
+    padding: 5rem 0;
+  }
+
+}

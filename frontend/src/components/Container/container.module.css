@@ -1,0 +1,43 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  border-left: 3px solid var(--main-black);
+  border-right: 3px solid var(--main-black);
+  border-bottom: 3px solid var(--main-black);
+  margin: 1.5rem 0;
+}
+
+.Header {
+  text-transform: uppercase;
+  border-top: 3px solid var(--main-black);
+  border-bottom: 3px solid var(--main-black);
+  background-color: var(--main-light-green);
+  min-height: 8rem;
+  display: flex;
+  align-items: center;
+}
+
+.Header > h2 {
+  margin-left: 3rem;
+  width: 100%;
+}
+
+.Content {
+  padding: 3rem;
+}
+
+.LinkContainer {
+  border-top: 3px dashed var(--main-black);
+  display: flex;
+  min-height: 6rem;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .Container {
+    flex: 1;
+    margin: 0 1.5rem;
+    height: 100%;
+  }
+}

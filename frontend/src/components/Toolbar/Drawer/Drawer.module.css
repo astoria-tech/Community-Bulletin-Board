@@ -1,0 +1,21 @@
+.Drawer {
+  position: fixed;
+  width: 100vw;
+  background-color: var(--tertiary-green);
+  min-height: 30vh;
+  left: 0;
+  top: 0;
+  z-index: 200;
+  padding: 3.2rem 1.6rem;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-out;
+}
+
+.Drawer.Open {
+  transform: translateY(0);
+}
+
+.Drawer.Closed {
+  transform: translateY(-100%);
+}
+

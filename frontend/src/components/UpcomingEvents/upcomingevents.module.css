@@ -1,0 +1,61 @@
+.Events {
+  width: 100%;
+
+  border-bottom: 3px solid var(--main-black);
+}
+
+.Events > header {
+  padding-left: 2rem;
+  border-top: 3px solid var(--main-black);
+  border-bottom: 3px solid var(--main-black);
+  background-color: var(--main-light-green);
+  display: flex;
+}
+
+.Events > header > h2 {
+  margin-left: 0;
+}
+
+.EventContainer {
+  border-bottom: 3px solid var(--main-grey);
+}
+
+div.EventContainer:last-child {
+  border: none;
+}
+
+.DesktopOnly {
+  display: none;
+}
+
+.MobileOnly {
+  display: flex;
+}
+
+.SubmitEvent {
+  padding: 2rem 2rem;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .Events > header {
+    padding-left: 15rem;
+    min-height: 15rem;
+    display: flex;
+    align-items: center;
+  }
+
+
+  .SubmitEvent {
+    padding: 3rem 15rem;
+  }
+  .DesktopOnly {
+    display: block;
+    margin-right: 15rem;;
+  }
+
+  .MobileOnly {
+    display: none;
+  }
+}

@@ -1,36 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap");
 
 :root {
   --main-green-color: #49b775;
-  --main-black: #000000;
+  --main-light-green: rgba(73, 183, 117, 0.25);
+  --tertiary-green: #77c998;
+  --main-black: #000;
+  --main-white: #fff;
+  --main-grey: rgba(0, 0, 0, 0.5);
+  --large-gutter-desktop: 15rem;
+  --medium-gutter-desktop: 8rem;
+  --small-gutter-desktop: 3rem;
+  --large-gutter-mobile: 5rem;
+  --medium-gutter-mobile: 3rem;
+  --small-gutter-mobile: 1rem;
 }
 
 /* sets 1rem to 10px with standard 16px font size */
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 
 * {
-  font-size: 1.8rem;
-  line-height: 2.25rem;
   font-family: "DM Mono", Courier, monospace;
-}
-
-h1 {
-  font-weight: 400;
-  font-family: "Fjalla One", Helvetica, sans-serif;
-}
-
-h2 {
-  font-family: "Fjalla One", Helvetica, sans-serif;
-  font-weight: 400;
-}
-
-h5 {
-  font-size: 3rem;
-  line-height: 3rem;
-  font-weight: 400;
+  font-size: 1.4rem;
 }
 
 a,
@@ -38,10 +32,123 @@ a::before,
 a:active,
 a::after {
   color: var(--main-black);
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  /* text-decoration: none; */
 }
 dl,
 dt,
-dt {
+dd,
+dt,
+ul,
+li,
+ol {
   margin: 0;
   padding: 0;
+}
+li {
+  list-style: none;
+}
+.visuallyHidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+h1 {
+  font-weight: 400;
+  font-family: "Fjalla One", Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 3rem;
+  line-height: 3.9rem;
+}
+
+p {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  font-weight: 400;
+  margin-bottom: 1.45rem;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+h2 {
+  font-family: "Fjalla One", Helvetica, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+dd {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  font-weight: 400;
+  margin-bottom: 0.7rem;
+}
+
+dt {
+  font-size: 1.8rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+.GetInvolvedContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  * {
+    font-size: 1.8rem;
+  }
+
+  .GetInvolvedContainer {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  p {
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+    line-height: 6.5rem;
+  }
+
+  h2 {
+    font-size: 5rem;
+    line-height: 6.5rem;
+  }
+
+  h5 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    font-weight: 400;
+  }
+
+  h6 {
+    font-size: 1.8rem;
+    line-height: 2.25rem;
+    font-weight: 400;
+    font-family: "DM Mono", Courier, monospace;
+  }
+
+  .mobileOnly {
+    display: none;
+  }
 }
