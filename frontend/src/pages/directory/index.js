@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 import classes from "./directory.module.css"
 import ErrorMessage from "../../components/ErrorMessage/errorMessage"
-import SingleOrganization from "./SingleOrganization/Singleorganization"
+import SingleOrganization from "./SingleOrganization/singleorganization"
 import FilterButton from "../../components/UI/FilterButton/filterbutton"
 import Button from "../../components/UI/Button/button"
 import {Link} from 'gatsby'

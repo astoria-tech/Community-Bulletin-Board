@@ -3,7 +3,7 @@ import axios from "axios"
 import SingleEvent from "./SingleEvent/singleEvent"
 import classes from "./upcomingevents.module.css"
 import ErrorMessage from "../ErrorMessage/errorMessage"
-import Button from "../UI/Button/Button"
+import Button from "../UI/Button/button"
 import { Link } from "gatsby"
 
 const UpcomingEvents = () => {

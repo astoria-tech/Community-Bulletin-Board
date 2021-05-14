@@ -59,7 +59,7 @@ const SingleRole = ({
             </a>
           </div>
           <div className={classes.Contact}>
-            <a href={normalizeUrl(website)}>Join {communityGroup} here</a>
+            <a href={normalizeUrl(`${website}`)}>Join {communityGroup} here</a>
           </div>
         </div>
       </div>
