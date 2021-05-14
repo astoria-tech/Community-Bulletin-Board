@@ -8,7 +8,7 @@ const app = express();
 
 app.get(
 	'/api/getOpen',
-	cors({ origin: 'http://localhost:8000' }),
+	cors({ origin: 'http://localhost:9000' }),
 	async (req, res) => {
 		const data = await getOpenRoles();
 		const rawJson = data.map((item) => item._rawJson);
@@ -18,7 +18,7 @@ app.get(
 
 app.get(
 	'/api/getEvents',
-	cors({ origin: 'http://localhost:8000' }),
+	cors({ origin: 'http://localhost:9000' }),
 	async (req, res, next) => {
 		try{
 			const data = await getEvents();
@@ -34,7 +34,7 @@ app.get(
 
 app.get(
 	'/api/getCommunityGroups',
-	cors({ origin: 'http://localhost:8000' }),
+	cors({ origin: 'http://localhost:9000' }),
 	async (req, res, next) => {
 		try{
 			const data = await getCommunityGroups();
