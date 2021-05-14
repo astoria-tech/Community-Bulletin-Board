@@ -14,7 +14,7 @@ const Roles = () => {
   useEffect(() => {
     setLoading(true)
     axios
-      .get("http://localhost:3000/api/getOpen")
+      .get("http://backend:3000/api/getOpen")
       .then(res => {
         setLoading(false)
         setRoles(res.data)

@@ -14,7 +14,7 @@ const UpcomingEvents = () => {
   useEffect(() => {
     setLoading(true)
     axios
-      .get("http://localhost:3000/api/getEvents")
+      .get("http://backend:3000/api/getEvents")
       .then(res => {
         console.log(res.data)
         setLoading(false)

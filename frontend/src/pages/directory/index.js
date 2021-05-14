@@ -21,7 +21,7 @@ const Directory = () => {
   useEffect(() => {
     setLoading(true)
     axios
-      .get("http://localhost:3000/api/getCommunityGroups")
+      .get("http://backend:3000/api/getCommunityGroups")
       .then(res => {
         setLoading(false)
         setGroups(res.data)
