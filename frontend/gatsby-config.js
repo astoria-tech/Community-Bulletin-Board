@@ -30,7 +30,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-layout`,
       options: {
-        component: require.resolve(`./src/components/layout`)
+        component: require.resolve(`./src/components/layout`),
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -38,7 +38,7 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
   proxy: {
-    prefix: "/api",
-    url: "http://backend:3000",
+    prefix: '/api',
+    url: 'http://backend:3000',
   },
 }
