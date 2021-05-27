@@ -54,7 +54,7 @@ const Singleorganization = ({
     <dl className={classes.SingleGroupContainer}>
       <div className={classes.HeaderContainer}>
         <h2>{name}</h2>
-        <span className={classes.Icon}><img src={displayIcon(label[0])} alt={`${label[0]}`} /></span>
+        <span className={classes.Icon}><img src={displayIcon(label?label[0]:null)} alt={`${label?label[0]:null}`} /></span>
       </div>
       <dt className={classes.visuallyHidden}>Role description</dt>
       <dd className={classes.Description}>{groupDescription}</dd>
