@@ -4,6 +4,7 @@ import classes from "./header.module.css"
 import HamburgerMenu from "react-hamburger-menu"
 import Drawer from "../Toolbar/Drawer/Drawer"
 import { MainIcon } from "../../assets"
+import { Link } from "gatsby"
 
 const Header = ({ siteTitle, menuOpen, menuClicked, closeMenu }) => (
   <header className={classes.Header}>
@@ -27,10 +28,12 @@ const Header = ({ siteTitle, menuOpen, menuClicked, closeMenu }) => (
           animationDuration={0.1}
         />
       </div>
-      <img src={MainIcon} />
-      <h1>
-        Astoria Community <br /> Bulletin Board
-      </h1>
+      <Link to="/">
+        <img src={MainIcon} />
+        <h1>
+          Astoria Community <br /> Bulletin Board
+        </h1>
+      </Link>
     </div>
 
     <Drawer open={menuOpen} closeMenu={closeMenu} />
