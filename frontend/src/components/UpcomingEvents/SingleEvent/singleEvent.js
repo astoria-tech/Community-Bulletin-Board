@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { DateTime } from "luxon"
 import classes from "./singleEvent.module.css"
+import normalizeUrl from "normalize-url"
 
 const SingleEvent = ({
   eventTitle,
@@ -43,9 +44,11 @@ const SingleEvent = ({
       <div className={readMore}>
         {eventDescription}
         <br />
-        <a href={`${meetingLink}`}>
-          Please check out this link for more information
-        </a>
+        {meetingLink ? (
+          <a href={normalizeUrl(`${meetingLink}`)}>
+            Please check out this link for more information
+          </a>
+        ) : null}
         <br />
       </div>
     </>
